@@ -23,17 +23,9 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(TAG, MODE_PRIVATE);
         isFirstTime = sharedPreferences.getBoolean(IS_FIRST_TIME, true);
 
-        if(isFirstTime){
+        if (isFirstTime) {
             startActivity(new Intent(this, FirstTimeLogin.class));
         }
-
-    }
-
-    protected void onPause() {
-        super.onPause();
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(IS_FIRST_TIME, isFirstTime);
-        editor.apply();
     }
 
     public void ocClick(View view) {
@@ -60,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "We don't care", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        System.exit(0);
     }
 }
