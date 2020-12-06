@@ -27,6 +27,7 @@
        android:orientation="vertical">
 
        <Button
+           android:id="@+id/food"
            android:layout_margin="5dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
            android:text="Food"/>
 
        <Button
+           android:id="@+id/sleep"
            android:layout_margin="5dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
            android:text="Sleep"/>
 
        <Button
+           android:id="@+id/health"
            android:layout_margin="5dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -51,6 +54,7 @@
            android:text="Health"/>
 
        <Button
+           android:id="@+id/interactions"
            android:layout_margin="5dp"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -67,12 +71,14 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/i_have_corona"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/circle_buttons_activity_main"
             android:drawableLeft="@drawable/ic_baseline_coronavirus_24"
-            android:paddingLeft="25dp" />
+            android:paddingLeft="25dp"
+            android:onClick="ocClick"/>
 
     </LinearLayout>
 

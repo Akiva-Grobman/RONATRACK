@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
         isFirstTime = sharedPreferences.getBoolean(IS_FIRST_TIME, true);
 
         if(isFirstTime){
-          //open the first time login todo : create the first time login
-            //...
-            //...
+            startActivity(new Intent(this, FirstTimeLogin.class));
         }
 
     }
@@ -36,4 +36,29 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    public void ocClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.food:
+                //open the MoreBasicInfo.xml and gives you the questionnaire
+            break;
+
+            case R.id.sleep:
+                //open the MoreBasicInfo.xml and gives you the questionnaire
+                break;
+
+            case R.id.health:
+                //open the MoreBasicInfo.xml and gives you the questionnaire
+                break;
+
+            case R.id.interactions:
+                //open the MoreBasicInfo.xml and gives you the questionnaire
+                break;
+
+            case R.id.i_have_corona:
+                Toast.makeText(this, "We don't care", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 }

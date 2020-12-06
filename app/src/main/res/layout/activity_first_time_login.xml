@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstTimeLogin"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/first_page"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="first page"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second_page"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="second page"
+            android:textColor="@color/purple_700"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third_page"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="third page"
+            android:textColor="@color/purple_700"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fourth_page"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fourth page"
+            android:textColor="@color/purple_700"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="right">
+
+       <Button
+           android:id="@+id/back"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="//back//"
+           android:layout_gravity="left"
+           android:textStyle="bold|italic"
+           android:layout_marginRight="200dp"
+           android:visibility="visible"
+           android:onClick="ocClick"/>
+
+       <Button
+           android:id="@+id/next"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="//next//"
+           android:textStyle="bold|italic"
+           android:layout_gravity="left"
+           android:layout_marginTop="10dp"
+           android:layout_marginRight="15dp"
+           android:visibility="visible"
+           android:onClick="ocClick"/>
+
+   </LinearLayout>
+
+</LinearLayout>
