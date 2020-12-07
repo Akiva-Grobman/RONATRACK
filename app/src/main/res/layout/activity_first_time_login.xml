@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         android:padding="20dp">
 
     <TextView
@@ -49,9 +49,9 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
         android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
@@ -66,21 +66,21 @@
             android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Height"/>
+            android:hint="Height"/>
 
         <EditText
             android:id="@+id/weight"
             android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Weight"/>
+            android:hint="Weight"/>
 
         <EditText
             android:id="@+id/age"
             android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Age"/>
+            android:hint="Age"/>
 
         <RadioGroup
             android:layout_marginTop="60dp"

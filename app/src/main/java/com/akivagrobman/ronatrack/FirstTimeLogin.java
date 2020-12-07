@@ -22,6 +22,7 @@ public class FirstTimeLogin extends AppCompatActivity {
     //basic info
     private EditText  etheight, etweight, etage;
     private static String gender;
+    private static boolean isFull = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +61,15 @@ public class FirstTimeLogin extends AppCompatActivity {
                         break;
 
                     case 2:
-                        second_page.setVisibility(View.GONE);
-                        third_page.setVisibility(View.VISIBLE);
+                        storeInfoInBasicInfoObject();
+                        if(isFull) {
+                            isFull = false;
+                            second_page.setVisibility(View.GONE);
+                            third_page.setVisibility(View.VISIBLE);
+                        }else{
+                            counter--;
+                            Toast.makeText(FirstTimeLogin.this, "These fields are required", Toast.LENGTH_SHORT).show();
+                        }
                         break;
 
                     case 3:
@@ -135,14 +143,19 @@ public class FirstTimeLogin extends AppCompatActivity {
 
     private void storeInfoInBasicInfoObject(){
 
-        String height = etheight.getText().toString();
-        String weight = etweight.getText().toString();
-        String age = etage.getText().toString();
+        String height = etheight.getText().toString().replaceAll("\\s+[^.-9]","");;
+        String weight = etweight.getText().toString().replaceAll("\\s+[^.-9]","");;
+        String age = etage.getText().toString().replaceAll("\\s+[^.-9]","");;
 
-        BasicInfo basicInfo = new BasicInfo(height, weight, age, gender);
+        // checking if the value is correct
+        //Toast.makeText(FirstTimeLogin.this, "height" + height + "\nweight" + weight + "\nage" + age + "\ngender" + gender , Toast.LENGTH_SHORT).show();
 
+        if(!height.isEmpty() && !weight.isEmpty() && !age.isEmpty() && !gender.isEmpty()) {
+            BasicInfo basicInfo = new BasicInfo(height, weight, age, gender); // todo Akiva gets this
+            Toast.makeText(FirstTimeLogin.this, "info sent", Toast.LENGTH_SHORT).show();
+            isFull = true;
+        }
     }
-
 
     private void saveFirstTimeParameter() {
         MainActivity.isFirstTime = false;
