@@ -13,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="You can help us even more by filling those questionnaires"
+        android:text="@string/you_can_help_us_even_more_by_filling_those_questionnaires"
         android:textColor="@color/purple_500"
         android:textSize="30sp"
         android:textStyle="bold"/>
 
-   <LinearLayout
+    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:gravity="center"
@@ -81,6 +81,5 @@
             android:onClick="ocClick"/>
 
     </LinearLayout>
-
 
 </LinearLayout>

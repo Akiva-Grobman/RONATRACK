@@ -12,15 +12,35 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:visibility="visible">
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="20dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="first page"
+        android:text="Hello."
+        android:layout_marginTop="150dp"
         android:textColor="@color/purple_700"
         android:textSize="30sp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="bottom"
+            android:text="Welcome to RonaTrack."
+            android:textColor="@color/purple_700"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_weight="1.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="bottom"
+            android:text="Click the next button  to begin..."
+            android:textColor="@color/purple_700"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
@@ -29,15 +49,69 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:visibility="gone">
+        android:visibility="visible"
+        android:padding="20dp"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="second page"
+            android:text="RonaTrack"
+            android:gravity="center"
             android:textColor="@color/purple_700"
             android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Height"/>
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weight"/>
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Age"/>
+
+        <RadioGroup
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="your gender"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <RadioButton
+                android:id="@+id/male"
+                android:text="Male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/female"
+                android:text="Female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"/>
+
+        </RadioGroup>
 
     </LinearLayout>
 
@@ -84,18 +158,18 @@
            android:id="@+id/back"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="//back//"
+           android:text="/back/"
            android:layout_gravity="left"
            android:textStyle="bold|italic"
            android:layout_marginRight="200dp"
-           android:visibility="visible"
+           android:visibility="gone"
            android:onClick="ocClick"/>
 
        <Button
            android:id="@+id/next"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="//next//"
+           android:text="/next/"
            android:textStyle="bold|italic"
            android:layout_gravity="left"
            android:layout_marginTop="10dp"
