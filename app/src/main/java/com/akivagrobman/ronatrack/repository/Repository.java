@@ -11,7 +11,6 @@ import com.akivagrobman.ronatrack.database.UserInfoDAO;
 
 public class Repository {
 
-    public static final int ID = 314159265;
     private final UserInfoDAO userInfoDAO;
 
     public Repository(Application application) {
@@ -21,10 +20,6 @@ public class Repository {
 
     public UserInfo getUserInfo(int id) {
         return userInfoDAO.getUserInfo(id);
-    }
-
-    public UserInfo getUserInfo() {
-        return getUserInfo(ID);
     }
 
     public void insert(UserInfo userInfo) {

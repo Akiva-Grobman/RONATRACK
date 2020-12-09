@@ -29,27 +29,11 @@ public abstract class UserInfoDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             UserInfoDatabase.class,
                             "user_info_table")
-                            .addCallback(databaseCallback)
                             .build();
                 }
             }
         }
         return INSTANCE;
     }
-
-    private static final RoomDatabase.Callback databaseCallback = new RoomDatabase.Callback() {
-        @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase database) {
-            super.onCreate(database);
-            databaseWriteExecutor.execute(() -> {
-                UserInfoDAO dao = INSTANCE.userInfoDAO();
-                UserInfo userInfo = new UserInfo(132113, 39, 392, 23, "Male");
-                dao.insert(userInfo);
-                userInfo = new UserInfo(Repository.ID + 89, 39, 238, 23, "Female");
-                dao.insert(userInfo);
-                Log.e(TAG, "Added Values to DB");
-            });
-        }
-    };
 
 }
