@@ -1,10 +1,13 @@
 package com.akivagrobman.ronatrack;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ButtonBarLayout;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -30,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         if (isFirstTime) {
             startActivity(new Intent(this, FirstTimeLogin.class));
         }
-
     }
 
     public void ocClick(View view) {
@@ -59,6 +61,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.profile:
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                break;
+
+            case R.id.questionnaires:
+                Intent intent2 = new Intent(MainActivity.this, Questionnaires.class);
+                startActivity(intent2);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                break;
+        }
+        return false;
+    }
+
     public void onBackPressed() {
         System.exit(0);
     }
@@ -73,18 +94,19 @@ public class MainActivity extends AppCompatActivity {
                 x2 = touchEvent.getX();
                 y2 = touchEvent.getY();
                 if(x1 < x2){
-                Intent i = new Intent(MainActivity.this, Profile.class);
-                startActivity(i);
+                    Intent i = new Intent(MainActivity.this, Profile.class);
+                    startActivity(i);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            }else if(x1 > x2){
-                Intent i = new Intent(MainActivity.this, Questionnaires.class);
-                startActivity(i);
+                }else if(x1 > x2){
+                    Intent i = new Intent(MainActivity.this, Questionnaires.class);
+                    startActivity(i);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-            break;
+                }
+                break;
         }
         return false;
     }
 
-
 }
+
+
