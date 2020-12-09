@@ -16,6 +16,6 @@ public interface UserInfoDAO {
     void deleteUserInfo();
 
     @Query("SELECT * FROM user_info_table WHERE id = :id")
-    LiveData<UserInfo> getUserInfo(int id);
+    UserInfo getUserInfo(int id);
 
 }

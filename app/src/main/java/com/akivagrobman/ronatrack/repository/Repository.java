@@ -13,16 +13,18 @@ public class Repository {
 
     public static final int ID = 314159265;
     private final UserInfoDAO userInfoDAO;
-    private final LiveData<UserInfo> userInfo;
 
     public Repository(Application application) {
         UserInfoDatabase database = UserInfoDatabase.getDatabase(application);
         userInfoDAO = database.userInfoDAO();
-        userInfo = userInfoDAO.getUserInfo(ID);
     }
 
-    public LiveData<UserInfo> getUserInfo() {
-        return userInfo;
+    public UserInfo getUserInfo(int id) {
+        return userInfoDAO.getUserInfo(id);
+    }
+
+    public UserInfo getUserInfo() {
+        return getUserInfo(ID);
     }
 
     public void insert(UserInfo userInfo) {

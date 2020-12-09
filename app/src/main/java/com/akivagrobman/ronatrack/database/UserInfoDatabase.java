@@ -2,20 +2,16 @@ package com.akivagrobman.ronatrack.database;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-
 import com.akivagrobman.ronatrack.repository.Repository;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {UserInfo.class}, version = 1, exportSchema = false)
+@Database(entities = {UserInfo.class}, version = 1)
 public abstract class UserInfoDatabase extends RoomDatabase {
 
     public static final String TAG = UserInfoDatabase.class.getSimpleName();
@@ -49,7 +45,7 @@ public abstract class UserInfoDatabase extends RoomDatabase {
                 UserInfoDAO dao = INSTANCE.userInfoDAO();
                 UserInfo userInfo = new UserInfo(132113, 39, 392, 23, "Male");
                 dao.insert(userInfo);
-                userInfo = new UserInfo(Repository.ID, 39, 238, 23, "Female");
+                userInfo = new UserInfo(Repository.ID + 89, 39, 238, 23, "Female");
                 dao.insert(userInfo);
                 Log.e(TAG, "Added Values to DB");
             });
