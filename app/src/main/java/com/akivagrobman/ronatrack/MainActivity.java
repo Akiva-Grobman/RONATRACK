@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.akivagrobman.ronatrack.database.UserInfo;
+import com.akivagrobman.ronatrack.models.Question;
+import com.akivagrobman.ronatrack.models.UserInfo;
 import com.akivagrobman.ronatrack.repository.Repository;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

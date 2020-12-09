@@ -1,4 +1,4 @@
-package com.akivagrobman.ronatrack.database;
+package com.akivagrobman.ronatrack.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
